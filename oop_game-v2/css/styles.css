@@ -11,7 +11,7 @@
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
-  --color-keys-dark: red;
+  --color-keys-dark: #ec7363;
   --font-size-large: 60px;
   --font-size-medium: 20px;
   --transition: all .2s ease-in-out;
@@ -88,7 +88,7 @@ button {
 /* Title */
 
 .header {
-  color: red;
+  color: #ec7363;
 }
 
 
@@ -112,8 +112,8 @@ button {
 }
 
 .show {
-  color: yellow;
-  background-color: green;
+  color: #dfec63;
+  background-color: #6ccec1;
   font-size: var(--font-size-medium);
   height: 50px;
   width: 50px;
@@ -139,15 +139,22 @@ button {
   border-radius: 50%;
 }
 
+.key:hover{
+  height: 55px;
+  width: 55px;
+  margin: 1px;
+  border-radius: 0;
+}
+
 
 .chosen {
-  background: green;
+  background: #6ccec1;
   height: 50px;
   width: 50px;
   border-radius: 50%;
   font-size: var(--font-size-medium);
-  color: yellow;
-  border-color: black;
+  color: #dfec63;
+  border-radius: 0;
 }
 
 .wrong {
@@ -156,7 +163,7 @@ button {
   border-radius: 50%;
   background: var(--color-keys-dark);
   color: black;
-  border-color: red;
+  border-color: #ec7363;
 }
 
 .btn__reset {
