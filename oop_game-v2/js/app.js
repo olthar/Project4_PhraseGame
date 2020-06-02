@@ -13,6 +13,8 @@ let disabledLetters = []
 let chosenPhrase = "";
 let phraseLength = 0
 let foundLetterCount = 0
+let usedPhraseNumber = []
+let randomNumber = 0
 
 const game = new Game(
     0, 

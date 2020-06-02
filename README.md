@@ -12,4 +12,4 @@ If the selected letter is not in the phrase, one of the player's hearts in the s
 The player keeps choosing letters until they reveal all the letters in the phrase, or they make five incorrect guesses.
 
 Went for exceeds expectations with this one
-I added some style elements, removing the boxes on the phrase so it's just lines for each letter and played with the keyboard, changing colours and shape of keys responsive to hover and chosen or not. I worked hard to make the code as streamlined as possible, especially with introducing the keyboard listener and preventing the keys from being used again. 
+I added some style elements, removing the boxes on the phrase so it's just lines for each letter and played with the keyboard, changing colours and shape of keys responsive to hover and chosen or not. I worked hard to make the code as streamlined as possible, especially with introducing the keyboard listener and preventing the keys from being used again. I added a loop that prevents the same phrase from being used until all 5 phrases have been guessed. 

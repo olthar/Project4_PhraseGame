@@ -11,14 +11,20 @@ class Game{
     }
     //Hides overlay and sets an active phrase to chosenPhrase
     startGame(){
-        startScreen.style.display = "none"
+        startScreen.style.display = "none";
+        this.resetGame();
         this.activePhrase = this.getRandomPhrase(this.phrases).toLowerCase();
         chosenPhrase = new Phrase(this.activePhrase);
         chosenPhrase.addPhraseToDisplay()
     }
     //gets a random number depending on how many phrases there are
     getRandomPhrase(phraseList){
-        const randomNumber = Math.floor(Math.random()*(this.phrases.length));
+        randomNumber = Math.floor(Math.random()*(this.phrases.length));
+        // prevents same phrase from appearing twice
+        while (usedPhraseNumber.indexOf(randomNumber) !== -1){
+            randomNumber = Math.floor(Math.random()*(this.phrases.length));
+        }
+        usedPhraseNumber.push(randomNumber);
         return phraseList[randomNumber];
     }
     handleInteraction(letterSelected){
@@ -42,11 +48,11 @@ class Game{
     }
     removeLife(){ 
         this.missed += 1;
-        if (this.missed === 5){
-            this.gameOver(true)
-        } else {       
-            // removes a heart from the list depending on the number of lives
+        // If there are less than 5 missed guesses, a heart is removed for each wrong guess
+        if (this.missed < 5){
             scoreBoard[this.missed-1].firstElementChild.src = "images/lostHeart.png";
+        } else {   
+            this.gameOver(true)    
         }
     }
     checkForWin(){
@@ -59,7 +65,6 @@ class Game{
     gameOver(lost){
         startScreen.style.display = "";
         const overlay = gameOverMessage.parentElement;
-        this.resetGame();
         //if the lost perameter is true, means lose or is false means win.
         if(lost == true){
             gameOverMessage.textContent = "GAME OVER!\n You are out of lives..."
@@ -88,6 +93,11 @@ class Game{
         foundLetterCount = 0
         phraseLength = 0
         this.missed = 0
+        // If all 5 phrases have been used, the phrases are then repeated
+        if (usedPhraseNumber.length === 5){
+            usedPhraseNumber = [];
+        }
+
 
     }
 }
