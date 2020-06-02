@@ -42,7 +42,7 @@ class Game{
     }
     removeLife(){ 
         this.missed += 1;
-        if (this.missed === 6){
+        if (this.missed === 5){
             this.gameOver(true)
         } else {       
             // removes a heart from the list depending on the number of lives
@@ -87,6 +87,7 @@ class Game{
         disabledLetters = []
         foundLetterCount = 0
         phraseLength = 0
+        this.missed = 0
 
     }
 }
